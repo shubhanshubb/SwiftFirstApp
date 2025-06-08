@@ -12,6 +12,8 @@ struct SampleAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.light)
+                .background(Color.red)
         }
     }
 }
