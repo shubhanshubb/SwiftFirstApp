@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct GreetingView: View {
+    @State private var inputText: String = ""
     var body: some View {
         VStack {
             Image(.gift)
@@ -11,11 +12,19 @@ struct GreetingView: View {
                 .font(.title)
                 .foregroundColor(Theme.maroon)
                 .padding(.top, 20)
-//            Image(.update)
-//                .resizable()
-//                .foregroundColor(Theme.black)
-//                .frame(width: 300, height: 300)
-//                .padding(.top, 20)
+            TextField("Write your name...", text: $inputText)
+                .padding(.all, 12)
+                .background(Theme.black)
+                .foregroundColor(Theme.white)
+                .cornerRadius(8)
+                .accentColor(Theme.white)
+                .padding(.horizontal, 24)
+                .padding(.top, 16)
+            
+            Text("You name: \(inputText)")
+                .foregroundColor(Theme.grayText)
+                .padding()
+                
             NavigationLink(destination: Shubhanshu()) {
                 Text("Shubhanshu's Profile")
                     .font(.headline)
